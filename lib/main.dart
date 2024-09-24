@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -70,38 +71,43 @@ class UserScreen extends StatelessWidget {
                                     200.0, // Set a fixed height for the placeholder
                                 fit: BoxFit.cover,
                               ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            users[index].title, // Title text
-                            style: const TextStyle(
-                                fontSize: 18.0, fontWeight: FontWeight.bold),
-                          ),
+                        Text(
+                          users[index].title, // Title text
+                          style: const TextStyle(
+                              fontSize: 18.0, fontWeight: FontWeight.bold),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            users[index].description??"", // Title text
-                            style: const TextStyle(
-                                fontSize: 12.0),
-                          ),
+                        Text(
+                          users[index].description??"", // Title text
+                          style: const TextStyle(
+                              fontSize: 12.0),
+                        ),
+                        Text(
+                          users[index].url??"", // Title text
+                          style: const TextStyle(
+                              fontSize: 12.0,color: Colors.lightBlue,decoration: TextDecoration.underline,                                          ),
+                        ),
+                        Text(
+                          users[index].content??"", // Title text
+                          style: const TextStyle(
+                            fontSize: 12.0,                                          ),
+                        ),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                textAlign: TextAlign.end,
+                               " - ${users[index].author??""}", // Title text
+                                style: const TextStyle(
+                                    fontSize: 14,fontWeight:  FontWeight.bold)),
+                              ),
+                          ],
                         ),
                       ],
                     ),
                   );
-                  /*    return ListTile(
-
-                    */ /*leading: ClipOval(
-                      child: Image.network(users[index].urlToImage!,
-                          width: 40.0,
-                          // Set the desired width
-                          height: 40.0,
-                          // Set the desired height
-                          fit: BoxFit.cover),
-                    ),*/ /*
-                    title: Text(users[index]
-                        .title), // Adjust according to your UserModel
-                  );*/
                 },
               );
             } else if (state is UserError) {
