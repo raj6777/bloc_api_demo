@@ -13,7 +13,8 @@ void main() async {
 
   // Check login state
   final prefs = await SharedPreferences.getInstance();
-  bool isLogin = prefs.getBool('isLogin') ?? false; // Default to false if not found
+  bool isLogin =
+      prefs.getBool('isLogin') ?? false; // Default to false if not found
 
   runApp(MyApp(isLogin: isLogin));
 }
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) =>
-          ApiBloc(userRepository: UserRepositoryImpl())..add(FetchNews()),
+              ApiBloc(userRepository: UserRepositoryImpl())..add(FetchNews()),
         ),
       ],
       child: MaterialApp(

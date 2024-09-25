@@ -33,11 +33,11 @@ class LoginPage extends StatelessWidget {
                   const SnackBar(content: Text('Login successful')),
                 );
                 context.read<LoginBloc>().add(
-                  LoginEventDetail(
-                    email: "",
-                    password: "",
-                  ),
-                );
+                      LoginEventDetail(
+                        email: "",
+                        password: "",
+                      ),
+                    );
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => UserScreen()),
@@ -61,7 +61,8 @@ class LoginPage extends StatelessWidget {
                   const Center(
                     child: Text(
                       "Login",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -107,11 +108,11 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         context.read<LoginBloc>().add(
-                          LoginEventDetail(
-                            email: emailController.text,
-                            password: passwordController.text,
-                          ),
-                        );
+                              LoginEventDetail(
+                                email: emailController.text,
+                                password: passwordController.text,
+                              ),
+                            );
                       }
                     },
                     child: const Text("Login"),

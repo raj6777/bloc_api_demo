@@ -14,7 +14,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       try {
         if (event.email == "" && event.password == "") {
           emit(UserInitial());
-        } else  {
+        } else {
           final success =
               await userRepository.login(event.email, event.password);
           if (success) {

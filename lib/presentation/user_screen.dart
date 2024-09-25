@@ -33,17 +33,17 @@ class UserScreen extends StatelessWidget {
                           children: [
                             users[index].urlToImage != null
                                 ? Image.network(
-                              users[index].urlToImage!,
-                              width: MediaQuery.of(context).size.width,
-                              height: 200.0,
-                              fit: BoxFit.cover,
-                            )
+                                    users[index].urlToImage!,
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
+                                  )
                                 : Image.asset(
-                              'assets/news.png',
-                              width: MediaQuery.of(context).size.width,
-                              height: 200.0,
-                              fit: BoxFit.cover,
-                            ),
+                                    'assets/news.png',
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
+                                  ),
                             Text(
                               users[index].title,
                               style: const TextStyle(
