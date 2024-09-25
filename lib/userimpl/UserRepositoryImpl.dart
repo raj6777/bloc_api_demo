@@ -40,4 +40,20 @@ class UserRepositoryImpl implements UserRepository {
       throw Exception("Failed to load news");
     }
   }
+
+  @override
+  Future<bool> login(String email,String password) async{
+    final url = Uri.https('reqres.in','/api/login');
+    final Map<String,dynamic> body = {
+      'email': email,
+      'password': password,
+    };
+    final response = await http.post(url,body: body);
+    if(response.statusCode == 200){
+      Map<String, dynamic> jsonData = json.decode(response.body);
+      return jsonData.containsKey('token');
+    }else{
+      throw Exception("Login failed: ${response.body}");
+    }
+  }
 }

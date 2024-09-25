@@ -1,6 +1,5 @@
 import 'package:api_calling_bloc_mvvm_demo/model/NewsModel.dart';
 import 'package:bloc/bloc.dart';
-
 import '../model/UserModel.dart';
 import '../repository/user_repository.dart';
 import 'api_event.dart';
@@ -17,7 +16,6 @@ class ApiBloc extends Bloc<ApiEvent, ApiState> {
         }catch(e){
          emit(UserError("Failed to fetch users: $e")); //
        }
-
     });
     on<FetchNews>((event, emit) async{
       emit(UserLoadig());
@@ -29,5 +27,8 @@ class ApiBloc extends Bloc<ApiEvent, ApiState> {
       }
 
     });
+
+
+
   }
 }

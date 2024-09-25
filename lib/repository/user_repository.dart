@@ -5,4 +5,6 @@ import '../model/UserModel.dart';
 abstract class UserRepository {
   Future<UserModel> fetchUsers();
   Future<NewsModel> fetchTopHeadlines();
+  Future<bool> login(String email,String password);
+
 }
