@@ -1,5 +1,6 @@
 import 'package:api_calling_bloc_mvvm_demo/bloc/login/login_bloc.dart';
 import 'package:api_calling_bloc_mvvm_demo/bloc/login/login_event.dart';
+import 'package:api_calling_bloc_mvvm_demo/presentation/HomeScreen.dart';
 import 'package:api_calling_bloc_mvvm_demo/presentation/user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,7 +41,7 @@ class LoginPage extends StatelessWidget {
                     );
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => UserScreen()),
+                  MaterialPageRoute(builder: (context) => Homescreen()),
                 );
               });
             }

@@ -1,4 +1,6 @@
-import 'package:api_calling_bloc_mvvm_demo/bloc/api_bloc.dart';
+import 'package:api_calling_bloc_mvvm_demo/bloc/news/news_bloc.dart';
+import 'package:api_calling_bloc_mvvm_demo/bloc/news/news_state.dart';
+import 'package:api_calling_bloc_mvvm_demo/main.dart';
 import 'package:api_calling_bloc_mvvm_demo/presentation/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,14 +11,14 @@ class UserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final apiBloc = BlocProvider.of<ApiBloc>(context);
+    final newsBloc = BlocProvider.of<NewsBloc>(context);
 
     return Scaffold(
       appBar: AppBar(title: const Text("User List")),
-      body: BlocBuilder<ApiBloc, ApiState>(
-        bloc: apiBloc,
+      body: BlocBuilder<NewsBloc, NewsState>(
+        bloc: newsBloc,
         builder: (context, state) {
-          if (state is UserLoadig) {
+          if (state is NewsLoadig) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is NewsLoaded) {
             final users = state.newsData.articles;
@@ -89,6 +91,7 @@ class UserScreen extends StatelessWidget {
                   onPressed: () async {
                     final prefs = await SharedPreferences.getInstance();
                     await prefs.remove('isLogin');
+                    objectbox.removeAllData();
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => LoginPage()),
@@ -98,7 +101,7 @@ class UserScreen extends StatelessWidget {
                 ),
               ],
             );
-          } else if (state is UserError) {
+          } else if (state is NewsError) {
             return Center(child: Text(state.message));
           }
           return const Center(child: Text("No Users"));

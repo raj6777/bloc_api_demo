@@ -1,0 +1,139 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:1063471547206952795",
+      "lastPropertyId": "7:6546768341957613386",
+      "name": "Datum",
+      "properties": [
+        {
+          "id": "1:6386633648441916203",
+          "name": "obxId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6664206619683812981",
+          "name": "id",
+          "type": 6
+        },
+        {
+          "id": "3:1839532409205854074",
+          "name": "email",
+          "type": 9
+        },
+        {
+          "id": "4:5190483604927538831",
+          "name": "firstName",
+          "type": 9
+        },
+        {
+          "id": "5:6067124657658683110",
+          "name": "lastName",
+          "type": 9
+        },
+        {
+          "id": "6:7530929522124296320",
+          "name": "avatar",
+          "type": 9
+        },
+        {
+          "id": "7:6546768341957613386",
+          "name": "userModelId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "1:5312825866473738640",
+          "relationTarget": "UserModel"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:8801841628576245264",
+      "lastPropertyId": "4:5180325590126700411",
+      "name": "Support",
+      "properties": [
+        {
+          "id": "1:1522042532796639670",
+          "name": "obxId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5539570439785665643",
+          "name": "url",
+          "type": 9
+        },
+        {
+          "id": "3:4080123404585513886",
+          "name": "text",
+          "type": 9
+        },
+        {
+          "id": "4:5180325590126700411",
+          "name": "userModelId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "2:4539040529534350456",
+          "relationTarget": "UserModel"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:3847653414251027679",
+      "lastPropertyId": "6:3920231038106913645",
+      "name": "UserModel",
+      "properties": [
+        {
+          "id": "1:966602118960572304",
+          "name": "obxId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:55770355145533366",
+          "name": "page",
+          "type": 6
+        },
+        {
+          "id": "3:1477244028235199759",
+          "name": "perPage",
+          "type": 6
+        },
+        {
+          "id": "4:821640569120303359",
+          "name": "total",
+          "type": 6
+        },
+        {
+          "id": "5:624841197303683267",
+          "name": "totalPages",
+          "type": 6
+        },
+        {
+          "id": "6:3920231038106913645",
+          "name": "supportId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "3:4046563617057149338",
+          "relationTarget": "Support"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:3847653414251027679",
+  "lastIndexId": "3:4046563617057149338",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
